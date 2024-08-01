@@ -1,58 +1,71 @@
-package com.ict.day01;
+package com.ict.day04;
+
+import java.util.Scanner;
 
 public class Ex04 {
-
 	public static void main(String[] args) {
-		// 숫자형은 정수형과 실수형으로 나뉜다. 
-	    // 정수형은 소숫점이 없는 숫자	
-	    // 실수형은 소숫점이 있는 숫자
-		// 정수 < 실수
-        
-		// 정수 : byte < short < int(기본) < long
-		// 실수 : float < double(기본)
+		Scanner scan = new Scanner(System.in);
 		
-		// byte : -128 ~ 127
+		String drink = "";
+		int menu = 0 ;
+		int input = 0 ;
+		int su = 0 ;
+		int dan = 0 ;
+		int total = 0 ;
+		int vat = 0 ;
+		int charge = 0 ;
+		
+		System.out.println(">>>>>>>>>>> 메뉴 >>>>>>>>>>>");
+        System.out.println(">>>   1.카페모카(3500)    >>>");
+        System.out.println(">>>   2.카페라떼(4000)    >>>");
+        System.out.println(">>>   3.아메리카노(3000)   >>>");
+        System.out.println(">>>   4.과일쥬스(4500)    >>>");
+        System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>");
+        System.out.print("메뉴를 선택하세요  >>> ");
+        menu = scan.nextInt();
+        /*
+        if(menu == 1 || menu == 2 || menu ==3 || menu == 4) {
+        }else {
+        	System.out.println("잘못 선택하셨습니다.");
+        }
+        */
+        if(menu >=1 && menu <= 4) {
+        	System.out.print("주문 수량 >> ");
+        	su = scan.nextInt();
+        	
+        	System.out.print("입금액 >> ");
+        	input = scan.nextInt();
+        	if (menu == 1) {
+				drink = "카페모카";
+				dan = 3500;
+			}else if (menu == 2) {
+				drink = "카페라떼";
+				dan = 4000;
+			}else if(menu == 3){
+				drink = "아메리카노";
+				dan = 3000;
+			}else if (menu == 4) {
+				drink = "과일쥬스";
+				dan = 4500;
+			}
+        	total = dan * su ;
+        	vat = (int)(total * 0.1);
+        	charge = input - (total + vat);
+        	System.out.println("지불금액 : " + input);
+    		System.out.println("선택금액 : " + drink);
+    		System.out.println("단가 : " + dan);
+    		System.out.println("수량 : " + su);
+    		System.out.println("총금액: " + (total + vat));
+    		System.out.println("잔돈 : " + charge);
+        	
+        }else {
+        	System.out.println("잘못 선택하셨습니다.");
+        }
 
-		byte k1 ;
-		k1 = 125 ;
-		System.out.println(k1);
-	
-		short k2 ;
-		k2 = 125 ;
-		System.out.println(k2);		
-		
-		// 정수형의 기본은 int 이다. 
-		int k3 ;
-		k3 = 125 ;
-		System.out.println(k3);
-		
-		// 정수 중 가장 큰 범위는 long 이다. 
-		// 숫자 뒤에 L또는 l을 붙인다. (생략 가능)
-		long k4 ; 
-		k4 = 125L ; 
-		System.out.println(k4);
-		
-		long k5 ; 
-		// long = int 원래는 오류인데 JVM이 프로모션을 한다.
-		// 프로모션이란, 작은 데이터가 더 큰 데이터로 변환(자동으로 된다.)
-		// 데이터 변형 없음
-		k5 = 125 ;
-		System.out.println(k5);
-		
-		int num1 ;
-		// int = long , 큰 데이터가 작은 데이터로 변환(오류발생)
-		// 강제로 오류를 해제할 수 있다. (디모션) = 강제형 변환
-		// 데이터 변형이 있을 가능성이 있다.
-		// 방법 : 변수 = (왼쪽자료형)(데이터) ; 
-		num1 = (int)(125L) ;
-		System.out.println(num1);
-		
-		byte num2 ;
-		num2 = (byte)(129) ;
-        System.out.println(num2);
-        
-
-		
 	}
-
 }
+
+
+
+
+
