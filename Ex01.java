@@ -1,40 +1,47 @@
-package com.ict.day04;
+package com.ict.day05;
 
 public class Ex01 {
 	public static void main(String[] args) {
-		// 단순 if 문 :조건식이 참일때만 실행, 거짓인 경우 무시
-		//   형식)  if(조건식){
-		//           조건식이 참일때 실행할 문장;
-		//           조건식이 참일때 실행할 문장;
-        //         }
-		//   주의사항 : 실행할 문장이 한 줄이면 블록{}를 생략할 수 있다.
+		// while 문 :  for 문과 같은 반복문
+		// 형식1)
+		//     초기식;
+		//     while(조건식){
+		//         조건식이 참이면 실행할 문장;
+		//         조건식이 참이면 실행할 문장;
+		//         조건식이 참이면 실행할 문장;
+		//         증감식;
+	    //     }
+		// while 문의 끝을 만나면 조건식으로 간다.
 		
-		// int k1이 60이면 합격
-		int k1 = 50 ;
-		String res = "초기값";
-		if (k1>=60) {
-			res = "합격";
+		int k = 0 ;
+		while (k < 10) {
+			System.out.print(k +"\t");
+			k++;
 		}
-		System.out.println("결과 : " + res);
+		System.out.println();
 		
-		// int k2이 60이면 합격, 아니면 불합격
-		int k2 = 50;
-		String res2 = "초기값";
-		if (k2>=60) {
-			res2 = "합격";
+		// 구구단에서 7단 출력
+		k=1;
+		while (k<10) {
+			System.out.println("7 * " + k + " = " + (7*k));
+			k++;
 		}
-		if (k2<60) {
-			res2 = "불합격";
+		// 1-10까지 홀수의 누적합, 짝수의 누적합을 구하자 
+		k=1;
+		int odd = 0 ;
+		int even = 0 ;
+		while (k<11) {
+			if(k%2 == 0) {
+				even = even + k ;
+			}else {
+				odd = odd + k ;
+			}
+			k++;
 		}
-		System.out.println("결과 : " + res2);
+		System.out.println("짝수 : " + even);
+		System.out.println("홀수 : " + odd);
 		
-		// int k3가 60이상 이면 합격 아니면 불합격
-		int k3 = 70 ;
-		String res3 = "불합격";
-		if (k3>=60) {
-			res3 ="합격";
-		}
-		System.out.println("결과 : " + res3);
+		
 		
 	}
 }
