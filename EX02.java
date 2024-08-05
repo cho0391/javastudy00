@@ -1,36 +1,47 @@
-package com.ict.day01;
+package com.ict.day05;
 
-public class EX02 {
+public class Ex02 {
 	public static void main(String[] args) {
-		// 주석 : 컴파일러가 무시하고 지나가는 줄
-		//       개발자가 자신이나 다른 개발자에게 힌트 또는 멘트를 남길때 사용
+		// while 문
+		// 형식2) 조건식 => true (무한루프)
+		//      초기식;
+		//      while(true){
+		//         [if(빠져나갈조건식) break;]
+		//         실행할 문장;
+		//         [if(빠져나갈조건식) break;]
+		//        증감식++;    
+        //      } 
 		
-		// 기본 자료형 : 자바컴파일러에 의해서 구분되는 데이터의 종류(타입)
-		//             논리형, 문자형, 숫자형(정수형, 실수형)
-		// 참조 자료형 : 클래스를 자료형으로 사용 
+		// 1-10 까지 출력
+		int i = 1 ;
+		while (true) {
+			if (i >= 11) {
+				break;
+			}
+			System.out.println(i);
+			i++;
+			
+		}
+		System.out.println();
 		
-		// 논리형 : boolean, 데이터 범위 : true, false (둘 중 하나)
+		i = 1 ;
+		while (true) {
+			System.out.println(i);
+			if (i >= 10) {
+				break;
+			}
+			i++;
+		}
 		
-		// 선언 : res에 boolean형의 데이터를 저장할 수 있는 공간을 만듬
-		// 자료형키워드 이름;
-		   boolean res ;
+		// 5단 출력
+		i = 1 ;
+		while (true) {
+			if(i >=10 ) {
+				break;
+			}
+			System.out.println(" 5 * " + i + " = " + (5*i));
+			i++;
+		}
 		
-		// 저장 : res 라는 저장공간에  true라는 데이터를 저장(대입, =)
-		//       '변수 = 데이터' 구조 -> 데이터를 변수에 저장한다
-		 res = true;
-		 // 변수를 호출하면 변수가 가지고 있는 데이터가 온다.
-		 System.out.println(res);
-		 
-		 // 클래스 안에서는 같은 이름으로 선언을 두번 할 수 없다. 
-		 // boolean res ;
-		 res = false;
-		 
-		 System.out.println(res);
-		 
-		 boolean res2 = true;
-		 System.out.println(res2);
-		 
-		 
 	}
-
 }
