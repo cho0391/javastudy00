@@ -1,40 +1,45 @@
-package com.ict.day05;
-
-import java.util.Scanner;
+package com.ict.day10;
 
 public class Ex09 {
-	public static void main(String[] args) {
-		Scanner scan = new Scanner(System.in);
-
-		// 무한 루프 숫자를 입력받아서 홀수, 짝수, 판별하자 (계속할까요?(1.yes, 2.no))
-		esc: while (true) {
-			System.out.print("숫자 입력 : ");
-			int su = scan.nextInt();
-			String str = "";
-			if (su % 2 == 0) {
-				str = "짝수";
-			} else {
-				str = "홀수";
-			}
-			System.out.println(su + "는 " + str + "입니다.");
-			
-			while(true) {
-				System.out.print("계속할까요?(1.yes, 2.no) >> ");
-				int num = scan.nextInt();
-				if (num == 1) {
-					continue esc;
-				}else if(num == 2) {
-					break esc;
-				}else {
-					System.out.println("숫자는 1과 2만 선택하세요");
-					continue;
-				}
-			}// 안 while 끝
-		} // 밖 while 끝
+    // 매개변수(파라미터) : 메서드 선언시 정의되는 변수, 
+    //                메서드를 호출할때 전달될 데이터를 가리키는 입력슬롯과 같은 역할
+	// 인자 : 실제로 메서드를 호출할때 전달되는 값.
+	//      매개변수에 저장되는 실제적인 데이터
+	
+	String name ;
+	int sum ;
+	double avg ;
+	String hak ;
+	
+	public void play01(String k1) {
+		name = k1;
 	}
+	public void play02(int k1, int k2, int k3) {
+		sum = k1 + k2 + k3;
+	}
+	public void play03() {
+        avg = (int)(sum /3.0*10)/10.0;
+	}
+	public void play04() {
+        if (avg>=90) {
+			hak = "A학점";
+        }else if (avg>=80) {
+			hak = "B학점";
+    	}else if (avg>=70) {
+    		hak = "C학점";
+	    }else {
+	    	hak = "F학점";
+	    }
+	}
+	public void play05() {
+		System.out.print("이름 : " + name);
+		System.out.print("총점 : " + sum);
+		System.out.print("평균 : " + avg);
+		System.out.print("학점 : " + hak);
+		
+		
+	}
+	
+	
+	
 }
-
-
-
-
-

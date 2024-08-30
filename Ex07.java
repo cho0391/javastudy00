@@ -1,48 +1,29 @@
-package com.ict.day05;
+package com.ict.day10;
 
 public class Ex07 {
-	public static void main(String[] args) {
-		// 다중 for 문일때 break 와 continue
-		for (int i = 0; i < 3; i++) {
-			for (int j = 0; j < 5; j++) {
-				if(i==2) {
-					break;
-				}
-				System.out.println("i=" + i + ", j=" + j);
-			}
-		}
-		System.out.println();
-		
-		for (int i = 0; i < 3; i++) {
-			for (int j = 0; j < 5; j++) {
-				if(j==2) {
-					break;
-				}
-				System.out.println("i=" + i + ", j=" + j);
-			}
-		}
-		System.out.println();
-		
-		
-		for (int i = 0; i < 3; i++) {
-			for (int j = 0; j < 5; j++) {
-				if(i==2) {
-					continue;
-				}
-				System.out.println("i=" + i + ", j=" + j);
-			}
-		}
-		System.out.println();
-		
-		for (int i = 0; i < 3; i++) {
-			for (int j = 0; j < 5; j++) {
-				if(j==2) {
-					continue;
-				}
-				System.out.println("i=" + i + ", j=" + j);
-			}
-		}
-		
 
+	static int nextId = 1;
+	int id;
+	
+	public void setId() {
+		id = nextId;
+		nextId++;
 	}
+	
+	public int getId() {
+		return id;
+	}
+
+	public int getNextId() {
+		return nextId;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }

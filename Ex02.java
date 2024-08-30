@@ -1,47 +1,31 @@
-package com.ict.day05;
+package com.ict.day10;
 
 public class Ex02 {
 	public static void main(String[] args) {
-		// while 문
-		// 형식2) 조건식 => true (무한루프)
-		//      초기식;
-		//      while(true){
-		//         [if(빠져나갈조건식) break;]
-		//         실행할 문장;
-		//         [if(빠져나갈조건식) break;]
-		//        증감식++;    
-        //      } 
+	// Ex01 객체 만들기
+
+		Ex01 t = new Ex01();
+		// 정보 가져오기(get)
+		String name = t.name;
+		int sum = t.sum;
+		System.out.println("이름 : " + name);
+		System.out.println("합 : " + sum);
 		
-		// 1-10 까지 출력
-		int i = 1 ;
-		while (true) {
-			if (i >= 11) {
-				break;
-			}
-			System.out.println(i);
-			i++;
-			
-		}
-		System.out.println();
+		// 정보 변경하기(set)
+		t.name = "둘리";
+		t.sum = 300;
+		// 가져오기
+		name = t.name;
+		sum = t.sum;
+		System.out.println("이름 : " + name);
+		System.out.println("합 : " + sum);
 		
-		i = 1 ;
-		while (true) {
-			System.out.println(i);
-			if (i >= 10) {
-				break;
-			}
-			i++;
-		}
+		// 메서드를 이용해서 sum 내용 변경하기
+		t.play01();
 		
-		// 5단 출력
-		i = 1 ;
-		while (true) {
-			if(i >=10 ) {
-				break;
-			}
-			System.out.println(" 5 * " + i + " = " + (5*i));
-			i++;
-		}
+		// 메서드를 이용해서 sum을 얻어내기
+		int sum2 = t.play02();
+		System.out.println("합계 : " + sum2);
 		
 	}
 }

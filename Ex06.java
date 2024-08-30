@@ -1,70 +1,42 @@
-package com.ict.day05;
+package com.ict.day10;
 
 public class Ex06 {
-	public static void main(String[] args) {
-		// break 와 continue
-		// break : switch 문 이나 현재 위치에 있는 반복문(보통은 for 문)을 탈출할 때 사용하는 예약어
-		// continue : 탈출이 아니다. 다음 반복문을 실행하기 위해 continue 문 아래를 무시하고 다음 회차를 진행하는 예약어
-		//            (for -> 증감식, while -> 조건식 으로 이동)
-		//  보통 if 문과 함께 사용한다. 
-		
-		// for 문으로 1-10 출력
-		for (int i = 1; i < 11; i++) {
-			System.out.print(i + " ");
-		}
-		System.out.println();
-		
-		// i 가 6 일때 break
-		for (int i = 1; i < 11; i++) {
-			if(i==6) {
-				break;
-			}
-			System.out.print(i + " ");
-		}
-		System.out.println();
-		
-		// i 가 6 일때 continue
-		for (int i = 1; i < 11; i++) {
-			if(i==6) {
-				continue;
-			}
-			System.out.print(i + " ");
-		}
-		System.out.println();
-		
-// 		i 가 6 일때 continue
-//		for (int i = 1; i < 11; i++) {
-//			System.out.print(i + " ");
-//			
-//			if(i==6) {
-//				continue;
-//			}
-//		}
-//		System.out.println();
+  public static void main(String[] args) {
+	  Ex05 t = new Ex05();
+	  int res1 = t.cnt1;
+	  int res2 = Ex05.cnt2;
+	  int res3 = t.cnt2;
+	  System.out.println("res1 = " + res1); // 0
+	  System.out.println("res2 = " + res2); // 0
+	  System.out.println("res3 = " + res3); // 0
+	  System.out.println();
 
-		
-		// 1-10까지 홀수 출력
-		for (int i = 1; i < 11; i++) {
-			if(i%2 == 0) {
-				continue;
-			}
-			System.out.print(i);
-		}
-		System.out.println();
-	}
+	  t.countUp1();
+	  Ex05.countUp2();
+	  t.countUp2();
+	  
+	  res1 = t.cnt1;
+	  res2 = Ex05.cnt2;
+	  System.out.println("res1 = " + res1); // 1
+	  System.out.println("res2 = " + res2); // 2
+	  System.out.println();
+	  
+	  Ex05 t2 = new Ex05();
+	  int result1 = t2.cnt1;
+	  int result2 = t2.cnt2;
+	  System.out.println("res1 = " + result1); // 0
+	  System.out.println("res2 = " + result2); // 2
+	  System.out.println();
+	  
+	  t2.countUp1();
+	  t2.countUp2();
+	  
+	  result1 = t2.cnt1;
+	  result2 = t2.cnt2;
+	  System.out.println("res1 = " + result1); // 1
+	  System.out.println("res2 = " + result2); // 3
+	  System.out.println();
+	  
+	  
+  }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

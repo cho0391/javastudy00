@@ -1,50 +1,32 @@
-package com.ict.day05;
+package com.ict.day10;
 
-import java.util.Arrays;
+import java.util.Scanner;
 
 public class Ex14 {
 	public static void main(String[] args) {
-		// Arrays 클래스 : 배열을 다루기 위한 다양한 메서드(기능)가 포함되어 있는 클래스
-		// 클래스가 가질 수 있는 요소 : 필드, 메서드, 생성자 
-		//  필드 - 데이터  - 변수, 상수
-		//  메서드() - 기능, 동작
-		//  생성자 - 나중에 
+		Scanner scan = new Scanner(System.in);
 		
-		int[] arr = new int[100];
+		Ex13 test = new Ex13();
 		
-		// for문을 이용해서 데이터 저장
-		for (int i = 0; i < arr.length; i++) {
-			arr[i] = i * 5;
-		}
+		System.out.print("이름 : ");
+		String name = scan.next();
 		
-		// 출력하기 
-		for (int i = 0; i < arr.length; i++) {
-			System.out.println(arr[i]);
-		}
-		System.out.println();
+		System.out.println("국어 : ");
+		int kor = scan.nextInt();
+		System.out.println("영어 : ");
+		int eng = scan.nextInt();
+		System.out.println("수학 : ");
+		int math = scan.nextInt();
 		
-		// Arrays.binarySearch(배열, 찾는값) : 해당 배열에서 값을 검색 한 후 있는 위치값(index)을 반환
-		//                                   만약에 없는 값을 찾으면 음수 
-		int su = Arrays.binarySearch(arr, 47);
-		System.out.println(su);
+		int sum = test.getSum(kor, eng, math);
+		double avg = test.getAvg(sum);
+		String hak = test.getHak(avg);
 		
+		System.out.println("이름 : " + name);
+		System.out.println("총점 : " + sum);
+		System.out.println("평균 : " + avg);
+		System.out.println("학점 : " + hak);
 		
-		String[] str = {"둘리","희동이","마이콜"};
-		int su2 = Arrays.binarySearch(str, "희동이");
-		System.out.println(su2);
 		
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-

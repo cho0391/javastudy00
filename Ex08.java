@@ -1,38 +1,61 @@
-package com.ict.day05;
+package com.ict.day10;
 
 public class Ex08 {
+	
 	public static void main(String[] args) {
-		// break label : 레이블이 지정된 반복문 탈출
-		// continue label : 레이블이 지정된 반복문의 증감식(for 문), while문은 조건식으로 이동
-
-		// 레이블지정 : 특정 반복문 앞에 "이름" 붙이면 된다.
-		// 주의) 레이블 다음에는 무조건 반복문만 올수 있다.
-
-		for (int i = 0; i < 3; i++) {
-			for (int j = 0; j < 5; j++) {
-				System.out.println("i=" + i + ", j=" + j);
-			}
-		}
-		System.out.println();
-
-		for (int i = 0; i < 3; i++) {
-			for (int j = 0; j < 5; j++) {
-				if(i==1) {
-					break ;
-				}
-				System.out.println("i=" + i + ", j=" + j);
-			}
-		}
+			
+		Ex07 minsu = new Ex07();
+		Ex07 heejin = new Ex07();
+		Ex07 sumi = new Ex07();
+		Ex07 yoon = new Ex07();
 		
-		System.out.println();
-
-		exit: for (int i = 0; i < 3; i++) {
-			for (int j = 0; j < 5; j++) {
-				if(i==1) {
-					break exit;
-				}
-				System.out.println("i=" + i + ", j=" + j);
-			}
-		}
+		
+		System.out.println("minsu - id : " + minsu.id);          // 0
+		System.out.println("heejin - id : " + heejin.id);		 // 0
+		System.out.println("sumi - id : " + sumi.id);			 // 0
+		System.out.println("yoon - id : " + yoon.id);			 // 0	
+		System.out.println("-----------------------");
+		
+		System.out.println("minsu - nextId : " + Ex07.nextId);   // 1
+		System.out.println("minsu - nextId : " + minsu.nextId);   // 1
+		System.out.println("heejin - nextId : " + Ex07.nextId);  // 1
+		System.out.println("sumi - nextId : " + Ex07.nextId);    // 1
+		System.out.println("yoon - nextId : " + Ex07.nextId);    // 1
+		
+		
+		
+		minsu.setId();
+		System.out.println(minsu.getNextId());
+		
+		System.out.println("minsu - nextId : " + Ex07.nextId);   // 2
+		System.out.println("minsu - nextId : " + minsu.nextId);   // 2
+		System.out.println("heejin - nextId : " + Ex07.nextId);  // 2
+		System.out.println("sumi - nextId : " + Ex07.nextId);    // 2
+		System.out.println("yoon - nextId : " + Ex07.nextId);    // 2
+		
+		Ex07.nextId = 15;
+		System.out.println("minsu - nextId : " + Ex07.nextId);   // 15
+		System.out.println("minsu - nextId : " + minsu.nextId);   // 15
+		System.out.println("heejin - nextId : " + Ex07.nextId);  // 15
+		System.out.println("sumi - nextId : " + Ex07.nextId);    // 15
+		System.out.println("yoon - nextId : " + Ex07.nextId);    // 15
+		
+		Ex07 hong = new Ex07();
+		System.out.println("hong - id : " + hong.id);   // 0
+		System.out.println("hong - nextId : " + hong.nextId);   // 15
+		
+		
+		
+		
+		heejin.setId();
+		System.out.println(heejin.getNextId());
+		
+		sumi.setId();
+		System.out.println(sumi.getNextId());
+		
+		yoon.setId();
+		System.out.println(yoon.getNextId());
+		
+		
 	}
 }

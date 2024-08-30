@@ -1,30 +1,41 @@
-package com.ict.day05;
-
-import java.util.Scanner;
+package com.ict.day10;
 
 public class Ex03 {
-	public static void main(String[] args) {
-		Scanner scan = new Scanner(System.in);
-		
-		// 무한 루프 숫자를 입력받아서 홀수, 짝수, 판별하자 (계속할까요?(1.yes, 2.no))
-		while (true) {
-			System.out.print("숫자 입력 : ");
-			int su = scan.nextInt();
-			String str = "";
-			if(su%2 == 0) {
-				str = "짝수";
-			}else {
-				str = "홀수";
-			}
-			System.out.println(su + "는 " + str + "입니다.");
-			
-			System.out.println("계속할까요?(1.yes, 2.no) >> ");
-			int num = scan.nextInt();
-			if(num == 2) {
-				break;
-			}
-			
-		}
 
+	 String year = "2학년";
+	static String name = "홍길동";
+	static int kor = 80;
+	static int eng = 80;
+	static int math = 80;
+	static int sum = 0;
+	
+	public static void play01() {
+		// static 메서드에서는 instance 변수를 사용할 수 없다.
+        // System.out.println(year);
+		sum = kor + eng + math;
 	}
+	
+	
+	public static int play02() {
+		// static 메서드 안에는 지역변수를 사용할 수 있다. 
+		int k = kor + eng + math;
+		return sum;
+	}
+	
+	/*
+	public static int play03() {
+		// 지역변수에는 static 을 사용할 수 없다.  
+		static int k = kor + eng + math;
+		return k;
+	}
+	*/
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }
